@@ -59,6 +59,9 @@ workflows:
   myWorkflow:
     jobs:
       - create_infrastructure
+      - add_ipto_inventory:
+             requires:
+               - create_infrastructure
       - configure_infrastructure:
              requires:  
                  - create_infrastructure
