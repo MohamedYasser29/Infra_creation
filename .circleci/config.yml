@@ -29,7 +29,7 @@ jobs:
     steps:
     - checkout
     - run:
-          aws ec2 describe-instances \
+        aws ec2 describe-instances \
         --query 'Reservations[*].Instances[*].PublicIpAddress' \
         --output text >> inventory.txt
 
@@ -64,5 +64,5 @@ workflows:
                - create_infrastructure
       - configure_infrastructure:
              requires:  
-                 - create_infrastructure
+                 - add_ipto_inventory
        
