@@ -22,6 +22,18 @@ jobs:
                --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
                --region us-east-1
 
+
+  add_ipto_inventory:
+    docker:  
+      - image: amazon/aws-cli
+    steps:
+    - checkout
+    - run:
+          aws ec2 describe-instances \
+        --query 'Reservations[*].Instances[*].PublicIpAddress' \
+        --output text >> inventory
+
+
   configure_infrastructure:
 
     docker:
