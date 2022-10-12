@@ -101,5 +101,7 @@ workflows:
       - configure_infrastructure
              #requires:  
                  #- add_ipto_inventory
-      -  smoke_test
+      -  smoke_test:
+          requires:
+           - create_infrastructure
        
