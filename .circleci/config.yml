@@ -100,7 +100,7 @@ jobs:
             command: |
               aws cloudformation deploy \
               --template-file bucket.yml \
-              --stack-name stack-create-bucket-arn:aws:s3:::bucketpr111 \
+              --stack-name stack-create-bucket-bucketpr111 \
               --parameter-overrides MyBucketName="mybucket-arn:aws:s3:::bucketpr111"
            # Uncomment the step below if yoou wish to upload all contents of the current directory to the S3 bucket
         #- run: aws s3 sync . s3://mybucket-arn:aws:s3:::bucketpr111 --delete
