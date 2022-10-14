@@ -1,4 +1,4 @@
-Parameters:
+
 Resources:
 WebsiteBucket:
   Type: AWS::S3::Bucket
